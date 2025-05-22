@@ -1,36 +1,71 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Mirko Romanelli 作品集网站复刻
 
-## Getting Started
+这是一个使用Next.js和TailwindCSS复刻的Mirko Romanelli作品集网站。
 
-First, run the development server:
+## 技术栈
+
+- Next.js 14 (App Router)
+- TypeScript
+- TailwindCSS
+- Framer Motion (动画)
+
+## 项目结构
+
+```
+/app
+  /about            # 关于页面
+  /contact          # 联系页面
+  /works            # 作品集页面
+    /[slug]         # 项目详情页面
+  /components       # 组件
+    /layout         # 布局组件
+    /projects       # 项目相关组件
+    /ui             # UI组件
+  /data             # 数据文件
+  globals.css       # 全局样式
+  layout.tsx        # 根布局
+  page.tsx          # 首页
+/public
+  /images           # 图片资源
+    /projects       # 项目图片
+```
+
+## 功能特点
+
+- 响应式设计
+- 平滑过渡动画
+- 项目筛选功能
+- 联系表单
+- 项目详情页面
+- 项目间导航
+
+## 运行项目
+
+1. 安装依赖:
+
+```bash
+npm install
+```
+
+2. 启动开发服务器:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+3. 打开浏览器访问 [http://localhost:3000](http://localhost:3000)
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 构建生产版本
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+npm run build
+```
 
-## Learn More
+## 部署
 
-To learn more about Next.js, take a look at the following resources:
+项目可以部署到Vercel、Netlify或其他支持Next.js的平台。
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 注意事项
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- 项目图片需要放在`/public/images/projects/`目录下，并且文件名需要与项目数据中的`imageUrl`字段匹配。
+- 项目使用了客户端组件，以便实现动画和交互效果。
