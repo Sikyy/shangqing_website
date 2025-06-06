@@ -1,6 +1,4 @@
-# Mirko Romanelli 作品集网站复刻
-
-这是一个使用Next.js和TailwindCSS复刻的Mirko Romanelli作品集网站。
+#重新部署
 
 ## 技术栈
 
