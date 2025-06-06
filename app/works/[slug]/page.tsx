@@ -9,6 +9,13 @@ import MainLayout from "../../components/layout/MainLayout";
 import { projectsData } from "../../data/projects";
 import { ProjectData } from "../../components/projects/ProjectGrid";
 
+// 添加 generateStaticParams 函数
+export async function generateStaticParams() {
+  return projectsData.map((project) => ({
+    slug: project.slug,
+  }));
+}
+
 export default function ProjectDetailPage() {
   const { slug } = useParams();
   const [project, setProject] = useState<ProjectData | null>(null);
