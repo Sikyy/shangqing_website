@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 
 interface ProjectPreviewProps {
   title: string;
@@ -81,11 +82,13 @@ const ProjectPreview = ({
       >
         {/* 项目图片背景 - 单一图片 */}
         <div className="preview-item__bg" style={{ position: 'relative', width: '100%', height: '100%' }}>
-          <img
+          <Image
             src={imageUrl}
             alt={title}
             className="preview-item__cover"
             loading="eager"
+            width={480}
+            height={480}
             style={{
               opacity: 1,
               zIndex: 5,

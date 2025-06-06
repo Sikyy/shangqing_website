@@ -12,7 +12,6 @@ export default function ContactPage() {
     message: ""
   });
   const [isSubmitted, setIsSubmitted] = useState(false);
-  const [focusedField, setFocusedField] = useState<string | null>(null);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
@@ -38,14 +37,6 @@ export default function ContactPage() {
     setTimeout(() => {
       setIsSubmitted(false);
     }, 5000);
-  };
-
-  const handleFocus = (fieldName: string) => {
-    setFocusedField(fieldName);
-  };
-
-  const handleBlur = () => {
-    setFocusedField(null);
   };
 
   const fadeIn = {
@@ -132,8 +123,6 @@ export default function ContactPage() {
                       name="name"
                       value={formData.name}
                       onChange={handleChange}
-                      onFocus={() => handleFocus('name')}
-                      onBlur={handleBlur}
                       required
                       placeholder="姓名"
                       className="w-full"
@@ -148,8 +137,6 @@ export default function ContactPage() {
                       name="email"
                       value={formData.email}
                       onChange={handleChange}
-                      onFocus={() => handleFocus('email')}
-                      onBlur={handleBlur}
                       required
                       placeholder="电子邮箱"
                       className="w-full"
@@ -164,8 +151,6 @@ export default function ContactPage() {
                       name="company"
                       value={formData.company}
                       onChange={handleChange}
-                      onFocus={() => handleFocus('company')}
-                      onBlur={handleBlur}
                       placeholder="公司（选填）"
                       className="w-full"
                     />
@@ -178,8 +163,6 @@ export default function ContactPage() {
                       name="message"
                       value={formData.message}
                       onChange={handleChange}
-                      onFocus={() => handleFocus('message')}
-                      onBlur={handleBlur}
                       rows={5}
                       required
                       placeholder="项目详情"
